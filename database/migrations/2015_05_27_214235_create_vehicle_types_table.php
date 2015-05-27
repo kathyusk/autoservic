@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCountiesTable extends Migration {
+class CreateVehicleTypesTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,15 +12,12 @@ class CreateCountiesTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('counties', function(Blueprint $table){
-
-            $table->increments('id');
+		Schema::create ('vehicle_types',function (Blueprint $table){
+           $table->increments('id');
             $table->string('name');
-
-
-
-    });
+        });
 	}
+
 
 	/**
 	 * Reverse the migrations.
@@ -29,7 +26,7 @@ class CreateCountiesTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('counties');
+		Schema::drop ('vehicle_types');
 	}
 
 }
