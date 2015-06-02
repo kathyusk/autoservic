@@ -15,6 +15,7 @@ class CreateVehicleBranchesTable extends Migration {
 		Schema::create ('vehicle_branches', function(Blueprint $table){
             $table->increments('id');
             $table->string('name');
+            $table->timestamps();
         });
 	}
 
@@ -25,7 +26,7 @@ class CreateVehicleBranchesTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop ('vehicle_types');
+		Schema::drop ('vehicle_branches');
 	}
 
 }

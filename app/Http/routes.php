@@ -13,9 +13,28 @@
 
 Route::get('/', 'WelcomeController@index');
 
+Route::get('/tunombre/{nombre}/{apellido}' , function($nombre = null, $apellido = null){
+    return "tu nombre es: ".$nombre." ".$apellido;});
+
 Route::get('home', 'HomeController@index');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+
+
+
+route::group (['prefix'=>'operations'], function(){
+
+    Route::get('/sum/','OperationController@sum');
+
+    Route::get('/sum/{num1}/{num2}','OperationController@sum');
+
+    Route::get('/subtraction/{num1}/{num2}','OperationController@subtraction');
+
+    Route::get('/multiplication/{num1}/{num2}','OperationController@multiplication');
+
+    Route::get('/division/{num1}/{num2}','OperationController@division');
+
+});

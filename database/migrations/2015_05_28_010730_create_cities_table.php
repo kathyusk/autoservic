@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateClientTypesTable extends Migration {
+class CreateCitiesTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,9 +12,12 @@ class CreateClientTypesTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('client_types',function(Blueprint $table){
+		Schema::create('cities',function(Blueprint $table){
            $table->increments('id');
-            $table->string('description');
+            $table->string('name');
+            $table->integer('county_id')->unsigned();
+
+            $table->foreign('county_id')->references('id')->on('counties');
             $table->timestamps();
 
         });
@@ -27,8 +30,7 @@ class CreateClientTypesTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('client_types');
+		Schema::drop('cities');
 	}
 
 }
-

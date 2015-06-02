@@ -17,6 +17,7 @@ class CreateVehicleServicesTable extends Migration {
             $table->string('serviceName');
             $table->string('price');
             $table->time('durationAprox');
+            $table->timestamps();
 
         });
 	}
