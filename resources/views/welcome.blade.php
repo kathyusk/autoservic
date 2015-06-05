@@ -40,7 +40,7 @@
 	<body>
 		<div class="container">
 			<div class="content">
-				<div class="title">la suma de{!!$num1!!} y {!!$num2!!} es : {!!$total!!}</div>
+				<div class="title">Laravel</div>
 				<div class="quote">{{ Inspiring::quote() }}</div>
 			</div>
 		</div>

@@ -2,10 +2,10 @@
 
 use Autoservice\Http\Requests;
 use Autoservice\Http\Controllers\Controller;
-
+use Autoservice\Http\Entities\County;
 use Illuminate\Http\Request;
 
-class OperationController extends Controller {
+class CityController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
@@ -14,7 +14,10 @@ class OperationController extends Controller {
 	 */
 	public function index()
 	{
+        $ciudades = City::all();
 
+        //return view('counties')->with('departamentos',$departamentos);
+        return view('cities')->with(compact('ciudades'));
 	}
 
 	/**
@@ -80,38 +83,5 @@ class OperationController extends Controller {
 	{
 		//
 	}
-
-    /**
-     * @param $num1
-     * @param $num2
-     * @return string
-     */
-
-
-
-
-    public function sum($num1,$num2)
-    {
-
-        $total=$num1+$num2;
-        return view('welcome')->with(compact('total','num1','num2'));
-    }
-
-    public function subtraction($num1,$num2)
-    {
-        return  $num1 - $num2;
-    }
-
-    public function multiplication($num1,$num2)
-    {
-        return $num1 * $num2;
-    }
-
-    public function division($num1,$num2)
-    {
-        return $num1 / $num2;
-    }
-
-
 
 }

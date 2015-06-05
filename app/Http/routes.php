@@ -1,4 +1,5 @@
-<?php
+<?php use Autoservice\Http\Entities\County;
+use Autoservice\Http\Entities\City;
 
 /*
 |--------------------------------------------------------------------------
@@ -11,7 +12,27 @@
 |
 */
 
-Route::get('/', 'WelcomeController@index');
+// Route::get('/', 'WelcomeController@index');
+
+//Route::get('/counties/', function(){
+  //  $departamentos = County::all();
+
+    //return view('counties')->with('departamentos',$departamentos);
+    //return view('counties')->with(compact('departamentos'));
+//});
+
+//Route::get('/cities/', function(){
+  //  $ciudades = City::all();
+
+    //return view('counties')->with('departamentos',$departamentos);
+  //  return view('cities')->with(compact('ciudades'));
+//});
+
+
+Route::resource('departamentos' , 'CountyController');
+
+Route::resource('ciudades' , 'CityController');
+
 
 Route::get('/tunombre/{nombre}/{apellido}' , function($nombre = null, $apellido = null){
     return "tu nombre es: ".$nombre." ".$apellido;});
