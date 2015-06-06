@@ -15,7 +15,7 @@ class CreateVehicleServicesTable extends Migration {
 		Schema::create ('vehicle_services', function (Blueprint $table){
            $table->increments('id');
             $table->string('serviceName');
-            $table->string('price');
+            $table->integer('price');
             $table->time('durationAprox');
             $table->timestamps();
 

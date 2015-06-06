@@ -15,11 +15,11 @@ class CreateVehicleLinesTable extends Migration {
 		Schema::create ('vehicle_lines',function(Blueprint $table){
            $table->increments('id');
             $table->string('name');
-            $table->integer('vehicle_type')->unsigned();
-            $table->integer('vehicle_branch')->unsigned();
+            $table->integer('vehicle_type_id')->unsigned();
+            $table->integer('vehicle_branch_id')->unsigned();
 
-            $table->foreign('vehicle_type')->reference('id')->on('vehicle_types');
-            $table->foreign('vehicle_branch')->reference('id')->on('vehicle_branches');
+            $table->foreign('vehicle_type_id')->references('id')->on('vehicle_types');
+            $table->foreign('vehicle_branch_id')->references('id')->on('vehicle_branches');
             $table->timestamps();
         });
 	}
