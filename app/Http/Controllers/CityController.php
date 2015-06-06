@@ -14,10 +14,10 @@ class CityController extends Controller {
 	 */
 	public function index()
 	{
-        $ciudades = City::all();
+        //$ciudades = City::all();
 
         //return view('counties')->with('departamentos',$departamentos);
-        return view('cities')->with(compact('ciudades'));
+        //return view('cities')->with(compact('ciudades'));
 	}
 
 	/**
@@ -27,7 +27,8 @@ class CityController extends Controller {
 	 */
 	public function create()
 	{
-		//
+        $county = County::all();
+		return view('configuration.city.create')->with(compact('county'));
 	}
 
 	/**
